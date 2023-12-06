@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+<style>
+    table{
+    font-family: Arial,sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border:1px solid #000;
+    font-size: 12pt;
+    }
+    th,td{
+border: 1px solid#000;
+padding: 10px;
+text-align: center;
+    }
+    th{
+        background-color: #D6EFED;
+    }
+    th:hover{
+        background-color: #D8D9DA;
+    }
+</style>
+
+<body>
+    <table id="EmployeeTable">
+        <thead>
+            <tr>
+        <th>Employee Name</th>
+        <th>Designation</th>
+        <th>Date of joining</th>
+        <th>Address</th>
+        <th>Salary</th>  
+        <tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>vaishnavi </td>
+                <td>Technical writer</td>
+                <td>1-01-2023</td>
+                <td>pune</td>
+                <td>40000</td>
+            </tr>
+            <tr>
+                <td>aishwarya </td>
+                <td>Technical Writer</td>
+                <td>2-03-2023</td>
+                <td>pune</td>
+                <td>60000</td>    
+            </tr>
+            <tr>
+                <td>punam</td>
+                <td>Technical Writer</td>
+                <td>3-03-2023</td>
+                <td>pune</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function display()
+        {
+            const table=document.getElementById("EmployeeTable");
+            const rows=table.getElementsByTagName("tr");
+
+            for(let i=1;i<row.length;i++)
+            {
+             const Designation=row[i].getElementsByTagName("td")[i].textContent;
+             const salary=parseInt(rows[i].getElementsByTagName("td")[4].textContent);
+             if(Designation==="Technical writer"&& salary>5000&& salary<70000){
+                rows[i].style.display="";
+
+             }else{
+                rows[i].style.display="none";
+
+             }
+            }
+        }
+        display();
+    </script>
+   
+</body>
+</html>
